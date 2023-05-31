@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng kí</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+  <body id="login">
+    <div class="center">
+      <h1 id="h1">Đăng kí tài khoản</h1>
+      <div id="form">
+        <div class="txt_field">
+          <input type="text" id="phone" required>
+          <span></span>
+          <label>Số điện thoại</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="email" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="fullname" required>
+          <span></span>
+          <label>Họ và tên</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="birthday" required>
+          <span></span>
+          <label>Ngày sinh</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="address" required>
+          <span></span>
+          <label>Địa chỉ</label>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Ảnh trước của CMND</label>
+          <input class="form-control" type="file" id="cmndfront">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Ảnh sau của CMND</label>
+            <input class="form-control" type="file" id="cmndback">
+        </div>
+        <button class="btn btn-primary" id="button" onclick="register()">Xác nhận</button>
+        <div class="signup_link">
+          Bạn đã có tài khoản? <a href="/auth/login">Đăng nhập thôi</a>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

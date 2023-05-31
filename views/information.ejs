@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="bodyInfo">
+    <div id="container">
+        <div class="content">
+          <h1 id="h1Info">Thông tin cá nhân:</h1>
+          <h3 id="h3Info">Số tài khoản: <b><%= username %></b></h3>
+          <h3 id="h3Info">Số dư trong tài khoản: <b>0 vnđ</b></h3>
+          <h3 id="h3Info">Trạng thái tài khoản: <b><%= status %></b></h3>
+          <h3 id="h3Info">Họ và tên: <b><%= fullname %></b></h3>
+          <h3 id="h3Info">Số điện thoại: <b><%= phone %></b></h3>
+          <h3 id="h3Info">Ngày sinh: <b><%= birthday %></b></h3>
+          <h3 id="h3Info">Email: <b><%= email %></b></h3>
+          <h3 id="h3Info">Địa chỉ: <b><%= address %></b></h3>
+          
+        </div>
+      </div>
+</body>
+
+</html>
+

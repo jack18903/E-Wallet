@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trang chủ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">E-Wallet</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/auth/information" class="nav-link">Xem trang cá nhân</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/auth/changePassword" class="nav-link">Đổi mật khẩu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Nạp tiền vào tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Rút tiền</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mua thẻ điện thoại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><button onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button></a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        
+    </header>
+
+    <div class="jumbotron text-center">
+        <h2> Hi <%= fullname %> </h2>
+        <h2> Welcome to E-Wallet </h2>
+    </div>
+    <div class="container">
+        <div>
+            <h2> Về E-Wallet</h2>
+            <h3>Với hàng trăm tính năng, bạn có thể thực hiện mọi nhu cầu cuộc sống với siêu ứng dụng MoMo: Chuyển tiền, Gửi tiết kiệm, Vay nhanh, Đặt vé du lịch, Mua vé xem phim, Quyên góp, Mua sắm thanh toán…
+                Nhanh chóng, tiện lợi, an toàn. Cả thế giới trong bàn tay, một chạm là có ngay!</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/img/ew1.jpg" alt="EW1" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="/img/ew2.jpg" alt="EW2" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="/img/ew3.jpg" alt="EW3" style="width:100%;">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div>
+            <h1 id="ih1">Có gì trên E-Wallet ?</h1>
+            <h2>1. E-WALLET CHUYỂN TIỀN</h2>
+            <h3 id="font">Cần Chuyển Tiền - E-Wallet liền!</h3>
+            <h3>Miễn phí, nhanh chóng, bảo mật. Chuyển tiền qua số điện thoại. Bao nhiêu cũng chuyển, dù chỉ 100Đ. Gửi gắm lời nhắn với thiệp và sticker.</h3>
+            <img src="/img/chuyentien.jpg" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+
+
+            <h2>2. E-WALLET TÀI CHÍNH | TÚI THẦN TÀI</h2>
+            <h3 id="font">Cần Tiền Lời - Tìm Trên E-Wallet Liền</h3>
+            <h3>Chỉ 10.000Đ có tiền lời mỗi ngày lên đến 6%/năm. Nạp rút tức thì không tốn phí. Số dư vừa sinh lời vừa thanh toán được trên MoMo.</h3>
+            <img src="/img/tuithantai.png" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+
+            <h2>3. E-WALLET TÀI CHÍNH | VÍ TRẢ SAU</h2>
+            <h3 id="font">Cần Ứng Tiền - Tìm Trên E-Wallet Liền</h3>
+            <h3>Chỉ 10.000Đ có tiền lời mỗi ngày lên đến 6%/năm. Nạp rút tức thì không tốn phí. Số dư vừa sinh lời vừa thanh toán được trên MoMo.</h3>
+            <img src="/img/vitrasau.jpg" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+
+            <h2>4. E-WALLET GIẢI TRÍ</h2>
+            <h3 id="font">Cần Giải Trí - E-Wallet Liền!</h3>
+            <h3>Mua vé xem phim, vé số, karaoke... trong tầm tay, thanh toán chỉ một giây. Chẳng phải đợi chờ, tiết kiệm thời giờ.</h3>
+            <img src="/img/giaitri.jpg" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+
+            <h2>5. E-WALLET QUYÊN GÓP</h2>
+            <h3 id="font">Cần Quyên Góp - E-Wallet Liền!</h3>
+            <h3>Chung tay giúp đỡ hoàn cảnh khó khăn. Quyên góp Heo Vàng, trao ngàn quà tặng. Phát tâm công đức, cúng dường cầu an.</h3>
+            <img src="/img/quyengop.jpg" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+
+            <h2>6. E-WALLET DU LỊCH</h2>
+            <h3 id="font">Cần Du Lịch - E-Wallet Liền!</h3>
+            <h3>Quản lý cả chuyến đi, so sánh mọi loại giá. Thanh toán vé máy bay, xe khách, tàu hỏa, khách sạn... Bảo mật an toàn, ngập tràn khuyến mãi.</h3>
+            <img src="/img/dulich.jpg" class="rounded" alt="Cinque Terre" width="100%" height="100%">
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Contact us</h3>
+                        <ul>
+                            <li><b>Địa chỉ: </b><a href="#">Tầng M, Tòa nhà Petroland, Số 12 Tân Trào, Phường Tân Phú,
+                                    Quận 7, Thành phố Hồ Chí Minh</a></li>
+                            <li><b>Hotline: </b><a href="#">1900 5454 43 (1000đ/phút)</a></li>
+                            <li><b>Email: </b><a href="#">hotro@ewallet.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Về E-wallet</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Điều khoản, điều lệ</a></li>
+                            <li><a href="#">Chính sách riêng tư</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>E-Wallet</h3>
+                        <p>Ví E-Wallet hiện đã liên kết trực tiếp với hơn 25 ngân hàng. Người dùng Ví E-Wallet có thể
+                            thanh toán mọi tiện ích hàng ngày như Điện/Nước/Internet/Truyền hình cáp; Mua vé Máy bay/vé
+                            xe/vé tàu hỏa; Thanh toán taxi Vinasun; Mua vé xem phim tất cả rạp; Đặt dịch vụ giúp việc;
+                            Mua hoa tươi…; </p>
+                    </div>
+
+                </div>
+                <p class="copyright">E-Wallet © 2022</p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+</script>
+
+</html>
